@@ -9,7 +9,7 @@ function Snake() {
     this.dir = function(x, y) {
         this.xspeed = x;
         this.yspeed = y;
-    }
+    };
 
     this.eat = function(pos) {
         var d = dist(this.x, this.y, pos.x, pos.y);
@@ -19,7 +19,7 @@ function Snake() {
         } else {
             return false;
         }
-    }
+    };
 
     this.death = function() {
         for (var i = 0; i < this.tail.length; i++) {
@@ -31,7 +31,7 @@ function Snake() {
                 this.tail = [];
             }
         }
-    }
+    };
 
     this.show = function() {
         fill(255);
@@ -40,7 +40,7 @@ function Snake() {
         }
         rect(this.x, this.y, scl, scl);
 
-    }
+    };
 
     this.update = function() {
         for (var i = 0; i < this.tail.length - 1; i++) {
@@ -55,6 +55,6 @@ function Snake() {
 
         this.x = constrain(this.x, 0, width - scl);
         this.y = constrain(this.y, 0, height - scl);
-    }
+    };
 
 }
